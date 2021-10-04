@@ -11,7 +11,7 @@ do
     esac
 done
 
-PACKAGE_VERSION=$(cat "${BASE_DIR}/build/gogetssl.json" | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')
+PACKAGE_VERSION=$(cat "${BASE_DIR}/package.json" | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')
 PACKAGES="${BASE_DIR}/build/packages/$package"
 for f in $PACKAGES
 do
@@ -20,10 +20,13 @@ do
   filename=$(basename "$f" .json)
   # remove previous build
   rm -rf "${BASE_DIR}/../tmp-build/client/$filename/*"
+
+  export TS_POST_PROCESS_FILE="/usr/local/bin/prettier --write"
+
   # Build the SDK's
-  openapi-generator-cli generate  --skip-validate-spec -i "${BASE_DIR}/build/gogetssl.json" -g "$filename" -o "${BASE_DIR}/../tmp-build/client/$filename" -c "$f" --git-host "github.com" \
+  openapi-generator-cli generate  --skip-validate-spec -i "${BASE_DIR}/build/providers/gogetssl/openapi3.json" -g "$filename" -o "${BASE_DIR}/../tmp-build/client/$filename" -c "$f" --git-host "github.com" \
   --git-repo-id "@snider/sdk-gogetssl-$filename" --git-user-id "snider" --artifact-version "${PACKAGE_VERSION}" --group-id "gogetssl" \
-  -p packageVersion="${PACKAGE_VERSION}" --global-property "apiTests=true"
+  -p packageVersion="${PACKAGE_VERSION}" --global-property "apiTests=true" --additional-properties=npmVersion="${PACKAGE_VERSION}"
   # Push to git
   (cp -f "${BASE_DIR}/build/ext/git_push.sh" "${BASE_DIR}/../tmp-build/client/$filename/git_push.sh" && chmod +x "${BASE_DIR}/../tmp-build/client/$filename/git_push.sh" &&
   cd "${BASE_DIR}/../tmp-build/client/$filename" && /bin/sh "$BASE_DIR/../tmp-build/client/$filename"/git_push.sh snider sdk-gogetssl-"$filename")
