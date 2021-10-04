@@ -3,6 +3,6 @@
     "apiModulePrefix":"gogetssl",
     "configurationPrefix":"gogetssl",
     "npmName":"@snider/sdk-gogetssl-typescript-angular",
-    "ngVersion": 8
+    "ngVersion": 12
   }
 }
