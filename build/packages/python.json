@@ -1,0 +1,7 @@
+{
+  "additionalProperties": {
+    "packageName": "gogetssl",
+    "projectName": "gogetssl",
+    "packageUrl": "https://github.com/snider/sdk-gogetssl-python"
+  }
+}

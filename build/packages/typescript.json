@@ -1,0 +1,10 @@
+{
+  "additionalProperties": {
+    "apiModulePrefix":"gogetssl",
+    "configurationPrefix":"gogetssl",
+    "npmName":"@snider/sdk-gogetssl-typescript",
+    "supportsES6": true,
+    "useInversify": true,
+    "useObjectParameters": true
+  }
+}

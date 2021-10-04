@@ -1,0 +1,10 @@
+{
+  "additionalProperties": {
+    "apiPackage": "sdk-gogetssl-bash",
+    "generateBashCompletion": true,
+    "generateZshCompletion":  true,
+    "processMarkdown":  true,
+    "scriptName":"gogetssl",
+    "hostEnvironmentVariable": "https://my.gogetssl.com/api/"
+  }
+}

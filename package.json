@@ -1,0 +1,19 @@
+{
+  "name": "sdk-builder",
+  "version": "1.2.2",
+  "description": "",
+  "author": "Snider<snider@lethean.io>",
+  "private": false,
+  "repository": {
+    "url": "https://github.com/snider/sdk-builder"
+  },
+  "license": "GPLv3",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "bash build/sdk.sh"
+  },
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.4.10",
+    "rimraf": "^3.0.2"
+  }
+}

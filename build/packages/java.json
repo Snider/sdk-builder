@@ -1,0 +1,20 @@
+{
+  "additionalProperties": {
+    "artifactUrl": "https://github.com/snider/sdk-gogetssl-java",
+    "artifactDescription": "GoGetSSL Java SDK",
+    "apiPackage": "org.gogetssl.api",
+    "artifactId": "org.gogetssl",
+    "developerEmail": "snider@lethean.io",
+    "developerName": "Snider",
+    "developerOrganization": "Lethean",
+    "developerOrganizationUrl": "https://lt.hn",
+    "groupId": "org.gogetssl",
+    "invokerPackage": "org.gogetssl",
+    "modelPackage": "org.gogetssl.model",
+    "licenseName": "GPLv3",
+    "licenseUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+    "scmUrl": "https://github.com/snider/sdk-gogetssl-java",
+    "scmConnection": "scm:git:git@github.com/snider/sdk-gogetssl-java.git",
+    "scmDeveloperConnection": "scm:git:git@github.com/snider/sdk-gogetssl-java.git"
+  }
+}

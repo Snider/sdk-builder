@@ -1,0 +1,9 @@
+{
+  "additionalProperties": {
+    "groupId": "org.gogetssl",
+    "apiPackage":"org.gogetssl.android.client",
+    "invokerPackage":"org.gogetssl.android.client",
+    "artifactId":"org.gogetssl.android.client",
+    "modelPackage":"org.gogetssl.android.models"
+  }
+}
